@@ -1,2 +1,20 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<!--Books-->
+<h1>Books</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Opinion</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @books.each do |books| %>
+        <tr>
+          <td><%= image_tag books.get_image %></td>
+          <td><%= books.title %></td>
+          <td><%= books.body %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
