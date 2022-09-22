@@ -30,7 +30,7 @@
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
               <li>
-                <%= link_to  root_path, class: "nav-link text-light" do %>
+                <%= link_to  user_path(current_user.id), class: "nav-link text-light" do %>
                   <i class="fa fa-home"></i>
                   Home
                 <% end %>
@@ -69,7 +69,7 @@
               <li>
                 <%= link_to new_user_registration_path, class: "nav-link text-light" do %>
                   <i class="fa fa-user-plus"></i>
-                  Sign Up
+                  Sign up
                 <% end %>
               </li>
               <li>

@@ -9,8 +9,7 @@ class User < ApplicationRecord
   has_one_attached :profile_image
   
   # nameの文字数は、2文字から20文字まで
-  validates :name,
-    length: { minimum: 2, maximum: 20 }
+  validates :name, uniqueness: true, length: { minimum: 2, maximum: 20 }
     
   #最大50文字まで
   validates :introduction, {length: {maximum: 50}}
