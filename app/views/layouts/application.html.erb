@@ -41,7 +41,11 @@
         </li>
       <% end %>
     </header>
-    
+    <!--ログイン＆サインイン＆ログアウト成功した時などにメッセージが表示-->
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+    <!--ログ～記述は-->
       <%= yield %>
   </body>
 </html>
