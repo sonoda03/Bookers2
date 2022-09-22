@@ -65,3 +65,4 @@ gem 'net-smtp'
 gem 'devise'
 
 gem "font-awesome-rails"
+
