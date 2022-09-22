@@ -3,6 +3,12 @@ class Book < ApplicationRecord
     has_one_attached :image
     belongs_to :user
     
+    validates :title, presence: true
+    #空でない、かつ最大200文字まで
+    validates :body, {presence: true, length: {maximum: 200}}
+    
+    
+    
   # 今回はBooksで画像投稿しないので下記は必要なし
   # def get_image
   #   unless image.attached?
