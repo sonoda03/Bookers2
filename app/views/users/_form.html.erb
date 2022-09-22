@@ -1,31 +1,39 @@
-<h1>User info</h1>
+<h2>User info</h2>
   <p><%= image_tag user.get_profile_image(100,100) %></p>
-  <table>
+  <table class="table">
+    <tr></tr>
     <tr>
-      <td>name</td>
-      <td><%= user.name %></td>
+      <th>name</th>
+      <th><%= user.name %></th>
     </tr>
     <tr>
-      <td>introduction</td>
-      <td><%= user.introduction %></td>
+      <th>introduction</th>
+      <th><%= user.introduction %></th>
     </tr>
   </table>
   
-  <% if user == current_user %>
-    <p><%= link_to "edit", edit_user_path(user.id) %></p>
-  <% else %>
-    <p><%= link_to "edit", user_path(current_user.id) %></p>
+  <div class="row">
+    <% if user == current_user %>
+      <%= link_to edit_user_path(user.id) ,class: "btn text-black-50" do %>
+        <i class="fa-solid fa-user-gear"></i>
+      <% end %>
+    <% else %>
+      <p><%= link_to "edit", user_path(current_user.id) %></p>
+    <% end %>
+  </div>
+  
+
+
+<h2 class="mt-3">New book</h2>
+
+  <%= form_with model: book do |f| %>
+    <div class="form-group">
+      <h4>Title</h4>
+      <%= f.text_field :title %>
+    </div>
+    <div class="form-group">
+      <h4>Opinion</h4>
+      <%= f.text_area :body %>
+    </div>
+      <%= f.submit "Create Book", class: 'btn btn-success' %>
   <% end %>
-
-
-<h1>New book</h1>
-
-<%= form_with model: book do |f| %>
-  <h4>Title</h4>
-  <%= f.text_field :title %>
-  
-  <h4>Opinion</h4>
-  <%= f.text_area :body %>
-  
-  <P><%= f.submit "Create Book" %></P>
-<% end %>

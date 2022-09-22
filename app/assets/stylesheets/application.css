@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+ 
+ /*yarnでインストールし、下記を追加*/
+ @import '~bootstrap/scss/bootstrap';
