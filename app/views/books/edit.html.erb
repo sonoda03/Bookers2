@@ -14,15 +14,15 @@
           <% end %>
         </ul>
       <% end %>
-      
+
       <%= form_with model:@book do |book| %>
         <div class="form-group">
           <p>Title</p>
-          <%= book.text_field :title %>
+          <%= book.text_field :title, class: 'form-control name' %>
         </div>
         <div class="form-group">
           <p>Opinion</p>
-          <%= book.text_area :body %>
+          <%= book.text_area :body, class: 'form-control name' %>
         </div>
         <div class="form-group">
           <p><%= book.submit 'Update Book', class: 'btn btn-success' %></p>
@@ -39,9 +39,8 @@
 
 
 
-  
 
-  
 
-  
-  
+
+
+
